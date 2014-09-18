@@ -1,26 +1,28 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var shortid = require('shortid');
-var app = express(); //create server
-var methodOverride = require('body-parser');
-var Swatch = require('./app/models/swatch');
+var express 				= require('express');
+var bodyParser 			= require('body-parser');
+var mongoose 				= require('mongoose');
+var shortid 				= require('shortid');
+var methodOverride 	= require('method-override');
+var app 						= express(); //create server
 
-//set our port
+// Port
 var port = 8888;
-
-//connect to db
+// Mongodb
 mongoose.connect('mongodb://emto:pokemon@ds033740.mongolab.com:33740/testing');
 
-//create app with bodyparser
+// Static files
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride());
+
+// Bodyparser/Json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-app.use(methodOverride());
 
-//create our router
+// Router
+// Backend routes
 var router = express.Router();
+var Swatch = require('./app/models/swatch');
 
 router.use(function(req, res, next) {
 	console.log('Middleware');
@@ -59,19 +61,14 @@ router.route('/swatches')
 
 // 	});
 
-//register routes
 app.use('/api', router);
 
+// Router
+// Frontend Route
 router.get('*', function(req, res) {
 	res.sendfile('./public/index.html');
 });
 
 //start
 app.listen(port);
-console.log('app up');
-
-
-
-
-
-
+console.log('Server Running');
