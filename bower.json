@@ -1,0 +1,12 @@
+{
+  "name": "ChristianLe",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-touch": "latest",
+    "angular-animate": "latest",
+    "angular-ui-router": "latest",
+    "font-awesome": "4.1.x"
+  }
+}
