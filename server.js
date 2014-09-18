@@ -19,28 +19,51 @@ app.use(bodyParser.json());
 var router = express.Router();
 
 
+router.use(function(req, res, next) {
+	console.log('use function');
+	next();
+});
+
 
 router.get('*', function(req, res) {
-	
-})
+	res.sendfile('./public/views/index.html');
+});
 
 router.route('/swatch')
+	.post(function(req, res) {
+		var swatch = new Swatch();
+		swatch.name = req.body.name;
+		swatch.blurb = req.body.blurb;
+		swatch.color = req.body.color;
+		swatch.link = req.body.link;
+		swatch.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json({ message : 'Swatch created!'});
+		});
 
---> post
---> get all
+	})
 
-router.route('/swatch/:swatchid')
-
-	.get(function(req,res) {
-
+	.get(function(req, res) {
+		Swatch.find(function(err, bears) {
+			if (err)
+				res.send(err);
+			res.json(swatch);
+		});
 	});
+
+// router.route('/swatch/:swatchid')
+
+// 	.get(function(req,res) {
+
+// 	});
 
 //register routes
 app.use('/api', router);
 
 //start
 app.listen(port);
-
+console.log('app up');
 
 
 
