@@ -1,6 +1,7 @@
 var express             = require('express');
 var bodyParser          = require('body-parser');
 var mongoose            = require('mongoose');
+var shortId = require('shortid');
 var methodOverride      = require('method-override');
 var app                 = express(); //create server
 
@@ -44,6 +45,7 @@ router.route('/swatches')
         swatch.blurb = req.body.blurb;
         swatch.links = req.body.links;
         swatch.color = req.body.color;
+        _id = shortId.generate();
 
         swatch.save(function(err) {
             if (err) {

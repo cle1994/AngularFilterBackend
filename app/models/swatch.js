@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var shortId = require('shortid');
 var Schema = mongoose.Schema;
 
 var SwatchSchema = new Schema({
@@ -11,6 +12,11 @@ var SwatchSchema = new Schema({
 	color: {
 		type: Array,
 		'default' : []
+	},
+	_id: {
+		type: String,
+		unique: true,
+		'default' : shortId.generate
 	}
 });
 
