@@ -1,3 +1,20 @@
-<div data-ng-controller="SwatchController">
-  {{ swatch }}
+<div class="selected-swatch" data-ng-controller="SwatchController">
+  <div class="name">
+    {{ swatch.name }}
+  </div>
+  <div class="tabs">
+    <div class="tab-header">
+      <div class="tab-links" ui-sref="swatch.selected.blurb" ui-sref-active="active">Blurb</div>
+      <div class="tab-links" ui-sref="swatch.selected.links" ui-sref-active="active">Links</div>
+    </div>
+    <div data-ui-view>
+      <div class="blurb">{{ swatch.blurb }}</div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="color" data-ng-repeat="color in getArray(swatch.color)">
+      <div class="box" style="background-color: {{ color.value }};"></div>
+      <div class="hex">{{ color.value }}</div>
+    </div>
+  </div>
 </div>

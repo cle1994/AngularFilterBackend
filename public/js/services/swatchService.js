@@ -4,7 +4,7 @@ ideaSwatch.factory('SwatchService', ['$http', function($http) {
       return $http.get('/api/swatches');
     },
 
-    create: function() {
+    create: function(swatchData) {
       return $http.post('/api/swatches', swatchData);
     },
 

@@ -1,247 +1,81 @@
 // Home
 
-.home-header {
-  @include box-shadow(0px, 2px, 6px, #dddddd, false);
-  margin-top: -54px;
-  height: 200px;
-  background: #ffffff;
-  opacity: 1;
+.home {
+  height: 100%;
 
-  -webkit-transition: opacity 0.25s, height 0.25s;
-  -moz-transition: opacity 0.25s, height 0.25s;
-  -o-transition: opacity 0.25s, height 0.25s;
-  transition: opacity 0.25s, height 0.25s;
   .header {
-    @include vertical-align;
+    position: relative;
+    @include font-size(26);
+    margin-bottom: 20px;
+    font-family: 'Roboto Slab', 'Helvetica', 'Arial', sans-serif;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .subtitle {
+    position: relative;
+    @include font-size(14);
+    margin-bottom: 80px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .button {
     text-align: center;
 
-    h1 {
-      @include font-size(16);
-      font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      color: #999999;
-      margin-bottom: 5px;
-    }
-    p {
-      @include font-size(8);
-      font-family: 'Roboto', Helvetica, Arial, sans-serif;
-      font-weight: 100;
-      color: #aaaaaa;
-    }
-  }
-
-  &.nobox {
-    opacity: 0;
-  }
-}
-
-.home-container {
-  min-height: 100vh;
-  padding-top: 40px;
-
-  .profile-card {
-    position: relative;
-    @include col(4/12, 2/12);
-    @include box-shadow(0px, 0px, 4px, #cccccc, false);
-    height: 500px;
-    background: url('../img/ProfPic.jpg');
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-
-    @media (max-width: 1079px) {
-      @include col(5/12, 1/12);
-    }
-
-    @media (max-width: 767px) {
-      @include col(10/12, 1/12);
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: 1460px) {
-      height: 760px;
-    }
-
-    .tag {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 75px;
-      width: 100%;
-      padding-left: 25px;
-      background: #ffffff;
-      line-height: 75px;
-      @include font-size(12);
-      font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      color: #aaaaaa
-    }
-
-    &:hover {
-      @include box-shadow(0px, 0px, 7px, #aaaaaa, false);
-    }
-  }
-
-  .work {
-    @include col(4/12);
-    margin-bottom: 20px;
-    background: #ffffff;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    @include font-size(8);
-    color: #aaaaaa;
-    
-    @media (max-width: 1079px) {
-      @include col(5/12);
-    }
-
-    @media (max-width: 767px) {
-      @include col(10/12, 1/12);
-      margin-bottom: 50px;
-    }
-
-    .card {
-      @include box-shadow(0px, 0px, 4px, #cccccc, false);
-      height: 250px;
-      width: 100%;
-      margin-top: 20px;
-      cursor: pointer;
-
-      @media (min-width: 1460px) {
-        height: 360px;
-      }
-
-      .tag {
-        position: relative;
-        width: 100%;
-        height: 46px;
-        background: #ffffff;
-
-        .project {
-          position: absolute;
-          bottom: 12px;
-          left: 12px;
-          @include font-size(9);
-          font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-          font-weight: 300;
-        }
-
-        .type {
-          position: absolute;
-          bottom: 12px;
-          right: 12px;
-          @include font-size(6);
-          font-family: 'Roboto', Helvetica, Arial, sans-serif;
-          font-weight: 300;
-        }
-      }
-
-      .image {
-        position: relative;
-        height: 206px;
-        background: url('../img/work/innod/home.png');
-        background-size: cover;
-        background-position: center;
-
-        @media (min-width: 1460px) {
-          height: 314px;
-        }
-      }
-
-      &:hover {
-        @include box-shadow(0px, 0px, 7px, #bbbbbb, false);
-      }
-    }
-    .more {
-      margin-top: 10px;
-      text-align: right;
-      @include font-size(6);
-      font-style: italic;
-      cursor: pointer;
-      &:hover {
-        color: #888888;
-      }
-    }
-  }
-
-  .blog {
-    @include col(4/12);
-    background: #ffffff;
-    margin-bottom: 100px;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    @include font-size(8);
-    color: #aaaaaa;
-
-    @media (max-width: 1079px) {
-      @include col(5/12);
-    }
-
-    @media (max-width: 767px) {
-      @include col(10/12, 1/12);
-      margin-bottom: 50px;
-    }
-
-    .card {
+    .circle {
       position: relative;
-      @include box-shadow(0px, 0px, 4px, #cccccc, false);
-      height: 100px;
-      width: 100%;
-      margin-top: 20px;
+      @include border-radius(40px);
+      @include font-size(14);
+      color: #000000;
+      opacity: 0.7;
+      background: #ffffff;
+      height: 80px;
+      width: 80px;
+      margin: 0 auto 20px auto;
       cursor: pointer;
+      -webkit-transition: opacity 0.2s;
+      -moz-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s;
 
-      img {
+      .plus {
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-      }
+        top: 35px;
+        left: 18px;
+        background: #333333;
+        width: 44px;
+        height: 10px;
+        @include border-radius(1px);
 
-      .content {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        padding: 10px;
-        padding-left: 110px;
-        color: #999999;
-
-        .title {
-          @include font-size(9);
-          font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-          font-weight: 300;
-          margin-bottom: 10px;
-        }
-
-        .subtitle {
-          @include font-size(7);
-          font-family: 'Roboto', Helvetica, Arial, sans-serif;
-          font-weight: 300;
-        }
-
-        .date {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-          @include font-size(6);
-          font-family: 'Roboto', Helvetica, Arial, sans-serif;
-          font-weight: 300;
+        &.plus-vert {
+          height: 44px;
+          width: 10px;
+          top: 18px;
+          left: 35px;
         }
       }
 
       &:hover {
-        @include box-shadow(0px, 0px, 6px, #bbbbbb, false);
+        opacity: 0.9;
       }
     }
 
-    .more {
-      margin-top: 10px;
-      text-align: right;
-      @include font-size(6);
-      font-style: italic;
-      cursor: pointer;
-      &:hover {
-        color: #888888;
-      }
+    .label {
+      opacity: 0.7;
+      color: #ffffff;
+      @include font-size(9);
+      font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      font-weight: 300;
+      opacity: 0;
+      -webkit-transition: opacity 0.2s;
+      -moz-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+    }
+
+    .circle:hover + .label {
+      opacity: 0.7;
     }
   }
 }

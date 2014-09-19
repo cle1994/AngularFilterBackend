@@ -45,13 +45,13 @@ router.route('/swatches')
         swatch.blurb = req.body.blurb;
         swatch.links = req.body.links;
         swatch.color = req.body.color;
-        _id = shortId.generate();
+        swatch._id = shortId.generate();
 
         swatch.save(function(err) {
             if (err) {
                 res.send(err);
             } else {
-                res.json({ message: 'Swatch created!' });
+                res.json({ swatchID: swatch._id });
             }
         });
     });

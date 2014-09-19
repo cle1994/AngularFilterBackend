@@ -1,0 +1,29 @@
+<div class="new" data-ng-controller="NewController">
+  <div>
+    <input class="input name" type="text" placeholder="Project Name" data-ng-model="name">
+  </div>
+  <div>
+    <textarea class="input" rows="4" type="text" placeholder="Project Blurb" data-ng-model="blurb"></textarea>
+  </div>
+  <div class="list">
+    <div data-ng-repeat="color in colors">
+      <input class="input" style="border-color: {{ color.value }};" ng-model="color.value" type="text" value="{{ color.value }}"/>
+    </div>
+  </div>
+  <div class="circle" data-ng-click="add('color')">
+    <div class="plus"></div>
+    <div class="plus plus-vert"></div>
+  </div>
+  <div class="list">
+    <div data-ng-repeat="link in links">
+      <input class="input" ng-model="link.url" type="text" value="{{ link.url }}"/>
+    </div>
+  </div>
+  <div class="circle" data-ng-click="add('link')">
+    <div class="plus"></div>
+    <div class="plus plus-vert"></div>
+  </div>
+  <div class="submit" data-ng-click="post()">
+    Start Sharing
+  </div>
+</div>

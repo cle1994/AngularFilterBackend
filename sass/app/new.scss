@@ -1,0 +1,87 @@
+.new {
+  text-align: center;
+  padding: 40px;
+
+  textarea.input {
+    resize: none;
+    color: #222222;
+    margin-bottom: 15px;
+  }
+
+  .input {
+    @include border-radius(1px);
+    padding: 10px;
+    outline: none;
+    color: #222222;
+    border: 2px solid #cccccc;
+    opacity: 0.8;
+    width: 50%;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    @include font-size(10);
+  }
+
+  .input.name {
+    margin-bottom: 15px;
+  }
+
+  .circle {
+    position: relative;
+    @include border-radius(40px);
+    @include font-size(14);
+    color: #000000;
+    opacity: 0.7;
+    background: #ffffff;
+    height: 40px;
+    width: 40px;
+    margin: 5px auto 20px auto;
+    cursor: pointer;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+
+    .plus {
+      position: absolute;
+      top: 18px;
+      left: 10px;
+      background: #333333;
+      width: 20px;
+      height: 4px;
+      @include border-radius(1px);
+
+      &.plus-vert {
+        height: 20px;
+        width: 4px;
+        top: 10px;
+        left: 18px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .submit {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    @include font-size(10);
+    opacity: 0.7;
+    padding: 12px 24px;
+    color: #ffffff;
+    width: 30%;
+    border: 1px solid #ffffff;
+    margin: 40px auto 0 auto;
+    cursor: pointer;
+    @include border-radius(1px);
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    -o-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      color: #333333;
+      background: #ffffff;
+    }
+  }
+}

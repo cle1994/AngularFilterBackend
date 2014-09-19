@@ -7,7 +7,6 @@
     <title>ideaSwatch</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="libs/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/application.css">
 
     <!-- jQuery -->
@@ -22,10 +21,11 @@
     <!-- ANGULAR CUSTOM -->
     <script src="./js/app.js"></script>
     <script src="./js/services/swatchService.js"></script>
+    <script src="./js/controllers/NewCtrl.js"></script>
     <script src="./js/controllers/MainCtrl.js"></script>
     <script src="./js/controllers/SwatchCtrl.js"></script>
   </head>
-  <body data-ng-app="ideaSwatch" data-ui-view>
-      
+  <body data-ng-app="ideaSwatch">
+      <div class="animation" data-ui-view></div>
   </body>
 </html>

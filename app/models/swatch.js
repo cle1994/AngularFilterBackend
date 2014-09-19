@@ -15,8 +15,7 @@ var SwatchSchema = new Schema({
 	},
 	_id: {
 		type: String,
-		unique: true,
-		'default' : shortId.generate
+		unique: true
 	}
 });
 

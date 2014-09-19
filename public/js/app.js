@@ -13,6 +13,10 @@ ideaSwatch.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", 
       url: '/',
       templateUrl: './views/home.html'
     })
+    .state('create', {
+      url: '/new',
+      templateUrl: './views/new.html'
+    })
     .state('swatch', {
       url: '/swatch',
       templateUrl: './views/swatch.html',
@@ -22,4 +26,12 @@ ideaSwatch.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", 
         url: '/:swatch_id',
         templateUrl: './views/selected_swatch.html'
       })
+        .state('swatch.selected.blurb', {
+          url: '/blurb',
+          templateUrl: './views/blurb.html'
+        })
+        .state('swatch.selected.links', {
+          url: '/links',
+          templateUrl: './views/links.html'
+        })
 }]);
