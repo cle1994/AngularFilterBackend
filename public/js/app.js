@@ -1,0 +1,25 @@
+var ideaSwatch = angular.module('ideaSwatch', ['ui.router', 'ngTouch', 'ngAnimate']);
+
+ideaSwatch.run(['$rootScope', '$state', function ($rootScope, $state) {
+  $rootScope.$state = $state;
+}]);
+
+ideaSwatch.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: './views/home.html'
+    })
+    .state('swatch', {
+      url: '/swatch',
+      templateUrl: './views/swatch.html',
+      abstract: true
+    })
+      .state('swatch.selected', {
+        url: '/:swatch_id',
+        templateUrl: './views/selected_swatch.html'
+      })
+}]);

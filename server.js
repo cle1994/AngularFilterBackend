@@ -1,7 +1,7 @@
 var express             = require('express');
 var bodyParser          = require('body-parser');
 var mongoose            = require('mongoose');
-var shortId = require('shortid');
+var shortId             = require('shortid');
 var methodOverride      = require('method-override');
 var app                 = express(); //create server
 
@@ -71,8 +71,11 @@ app.use('/api', router);
 
 // Router
 // Frontend Route
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/public/index.html');
+});
 router.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
+    res.sendfile('/public/index.html');
 });
 
 //start

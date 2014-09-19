@@ -1,0 +1,44 @@
+<div data-ng-controller="MainController">
+  <div class="swatch" data-ng-repeat="swatch in swatches">
+    <div ui-sref="swatch.selected({swatch_id: swatch._id})">
+      {{ swatch._id }}
+    </div>
+    <br>
+    {{ swatch.name }}
+    <br>
+    {{ swatch.blurb }}
+    <div>
+      ===========
+    </div>
+    <div>
+      Color
+    </div>
+    <div data-ng-repeat="color in getArray(swatch.color)">
+      --------
+      <br>
+      {{ color }}
+      <br>
+      --------
+    </div>
+    <div>
+      ===========
+    </div>
+    <div>
+      ===========
+    </div>
+    <div>
+      Link
+    </div>
+    <div data-ng-repeat="link in getArray(swatch.links)">
+      --------
+      <br>
+      {{ link }}
+      <br>
+      --------
+    </div>
+    <div>
+      ===========
+    </div>
+    <br><br>
+  </div>
+</div>
