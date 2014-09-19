@@ -6,7 +6,7 @@ var methodOverride      = require('method-override');
 var app                 = express(); //create server
 
 // Port
-var port = 8888;
+var port = process.env.PORT || 8888;
 // Mongodb
 mongoose.connect('mongodb://emto:pokemon@ds033740.mongolab.com:33740/testing');
 
