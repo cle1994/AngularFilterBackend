@@ -113,4 +113,48 @@
       }
     }
   }
+  .reminder {
+    margin-top: 10px;
+    width: 100%;
+    opacity: 0.5;
+    color: #ffffff;
+    @include font-size(8);
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    -webkit-animation: pulse 3s infinite ease-in-out;
+    -moz-animation: pulse 3s infinite ease-in-out;
+    -o-animation: pulse 3s infinite ease-in-out;
+    animation: pulse 3s infinite ease-in-out;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
 }
