@@ -9,5 +9,7 @@ application.
 You can access the api endpoints at the following urls:
 
 http://angular-filter-backend.herokuapp.com/api/types
+
 http://angular-filter-backend.herokuapp.com/api/classes
+
 http://angular-filter-backend.herokuapp.com/api/tasks
