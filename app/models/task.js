@@ -15,4 +15,4 @@ var TaskSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Swatch', TaskSchema)
+module.exports = mongoose.model('Task', TaskSchema)
