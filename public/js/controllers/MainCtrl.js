@@ -1,1 +1,0 @@
-ideaSwatch.controller('MainController', function($scope, SwatchService) {});

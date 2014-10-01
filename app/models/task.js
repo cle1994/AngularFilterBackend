@@ -2,14 +2,10 @@ var mongoose = require('mongoose');
 var shortId = require('shortid');
 var Schema = mongoose.Schema;
 
-var SwatchSchema = new Schema({
+var TaskSchema = new Schema({
 	name: String,
-	blurb: String,
-	links: {
-		type: Array,
-		'default' : []
-	},
-	color: {
+	classID: String,
+	typeIDs: {
 		type: Array,
 		'default' : []
 	},
@@ -19,4 +15,4 @@ var SwatchSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Swatch', SwatchSchema)
+module.exports = mongoose.model('Swatch', TaskSchema)
