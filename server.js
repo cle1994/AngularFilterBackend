@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
+app.set("jsonp callback", true);
+
 // Router
 // Backend routes
 var router = express.Router();
@@ -37,7 +39,7 @@ router.route('/types')
             if (err) {
                 res.send(err);
             } else {
-                res.json(types);
+                res.jsonp(types);
             }
         });
     })
@@ -61,7 +63,7 @@ router.route('/types/:typeid')
             if (err) {
                 res.send(err);
             } else {
-                res.json(type);
+                res.jsonp(type);
             }
         });
     });
@@ -72,7 +74,7 @@ router.route('/tasks')
             if (err) {
                 res.send(err);
             } else {
-                res.json(tasks);
+                res.jsonp(tasks);
             }
         });
     })
@@ -98,7 +100,7 @@ router.route('/tasks/:taskid')
             if (err) {
                 res.send(err);
             } else {
-                res.json(task);
+                res.jsonp(task);
             }
         });
     })
@@ -125,7 +127,7 @@ router.route('/classes')
             if (err) {
                 res.send(err);
             } else {
-                res.json(classes);
+                res.jsonp(classes);
             }
         });
     })
