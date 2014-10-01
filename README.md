@@ -5,3 +5,9 @@ the original problem.
 
 I chose to use Angular's powerful filtering and views to create a single page
 application.
+
+You can access the api endpoints at the following urls:
+
+http://angular-filter-backend.herokuapp.com/api/types
+http://angular-filter-backend.herokuapp.com/api/classes
+http://angular-filter-backend.herokuapp.com/api/tasks
